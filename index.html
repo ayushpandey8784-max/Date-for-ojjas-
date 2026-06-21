@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ojjasvi ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+    font-family:Georgia, serif;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:2.5rem;
+    color:#333;
+    margin-bottom:15px;
+}
+
+p{
+    letter-spacing:3px;
+    margin-bottom:35px;
+    color:#555;
+}
+
+button{
+    padding:14px 35px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#2563eb;
+    color:white;
+}
+
+#no{
+    background:white;
+    border:2px solid #ccc;
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Ojjasvi Sharma ❤️</h1>
+    <h2>Will You Go On A Date With Me?</h2>
+    <br>
+    <p>~ Ayush Pandey</p>
+
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😅</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * 80 + "vw";
+    noBtn.style.top = Math.random() * 80 + "vh";
+});
+
+document.getElementById("yes").onclick = () => {
+    document.body.innerHTML = `
+    <div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#fff0f5;">
+        <h1 style="font-size:3rem;">Yay! ❤️</h1>
+        <h2>Ayush & Ojjasvi 🥰</h2>
+        <p>Best date loading...</p>
+    </div>`;
+};
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,500);
+</script>
+
+</body>
+  </html>
