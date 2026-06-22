@@ -93,34 +93,4 @@ const noBtn = document.getElementById("no");
 
 noBtn.addEventListener("mouseover", () => {
     noBtn.style.position = "absolute";
-    noBtn.style.left = Math.random() * 80 + "vw";
-    noBtn.style.top = Math.random() * 80 + "vh";
-});
-
-document.getElementById("yes").onclick = () => {
-    document.body.innerHTML = `
-    <div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#fff0f5;">
-        <h1 style="font-size:3rem;">Yay! ❤️</h1>
-        <h2>Ayush & Ojjasvi 🥰</h2>
-        <p>Best date loading...</p>
-    </div>`;
-};
-
-function createHeart(){
-    const heart=document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML="❤️";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(Math.random()*20+15)+"px";
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },6000);
-}
-
-setInterval(createHeart,500);
-</script>
-
-</body>
-  </html>
+    
